@@ -1,15 +1,16 @@
 [tool.poetry]
-name = "pdfmanagement_backend"
+name = "pdfmanagement_be"
 version = "0.1.0"
 description = "Django Rest Backend for PDF Management"
 authors = ["Jeremy_1806 <2019117@iiitdmj.ac.in>"]
 readme = "README.md"
-packages = [{include = "pdfmanagement_backend"}]
+packages = [{include = "pdfmanagement_be"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
 dj-database-url = "^2.0.0"
 psycopg2-binary = "^2.9.6"
+gunicorn = "^20.1.0"
 
 
 [build-system]

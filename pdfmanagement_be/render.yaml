@@ -1,0 +1,21 @@
+databases:
+  - name: pdfmanagement_backend
+    databaseName: pdfcollabdb
+    user: pdfcollabdb_user
+
+services:
+  - type: web
+    name: pdfmanagement_backend
+    runtime: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn pdfmanagement_backend.wsgi:application"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: pdfcollabdb
+          property: connectionString
+          value: postgres://pdfcollabdb_user:Lls8hWcOJzYoZ8WFwgUiBrVdSMFtyF65@dpg-cimr3nlgkuvotpjmpr90-a/pdfcollabdb
+      - key: SECRET_KEY
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4
