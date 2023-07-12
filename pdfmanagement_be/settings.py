@@ -43,7 +43,7 @@ if RENDER_EXTERNAL_HOSTNAME:
 
 # Application definition
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',
+    'https://spotdraft-assignment.netlify.app',
 ]
 
 INSTALLED_APPS = [
@@ -113,7 +113,8 @@ DATABASES = {
 'default': dj_database_url.config(
         # Feel free to alter this value to suit your needs.
         default=os.getenv('DATABASE_HOST'),
-        conn_max_age=600
+        conn_max_age=600,
+
     )
 }
 
@@ -153,7 +154,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

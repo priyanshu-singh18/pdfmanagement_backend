@@ -1,14 +1,14 @@
 databases:
-  - name: pdfmanagement_backend
+  - name: pdfmanagement_be
     databaseName: pdfcollabdb
     user: pdfcollabdb_user
 
 services:
   - type: web
-    name: pdfmanagement_backend
+    name: pdfmanagement_be
     runtime: python
     buildCommand: "./build.sh"
-    startCommand: "gunicorn pdfmanagement_backend.wsgi:application"
+    startCommand: "gunicorn pdfmanagement_be.wsgi:application"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
